@@ -2,9 +2,9 @@
 from .. import db
 
 
-class Sensor(db.Model):
-    """ Sensor Model for storing sensor related details """
-    __tablename__ = "sensor"
+class MeasurementType(db.Model):
+    """ MeasurementType Model for storing measurement type related details """
+    __tablename__ = "measurement_type"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), unique=True, nullable=False)
@@ -12,4 +12,4 @@ class Sensor(db.Model):
     last_update = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
-        return "<Sensor '{}'>".format(self.title)
+        return "<Measurement type '{}'>".format(self.title)

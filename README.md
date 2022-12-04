@@ -36,9 +36,15 @@ Make sure to run the initial migration commands to update the database.
 
 > python manage.py db upgrade
 
+additional:
+
+Run pylint error check during development can help to track errors
+
+```bash
+pylint -E app/
+```
 
 ### Viewing the app ###
-
 Open the following url on your browser to view swagger documentation
 http://127.0.0.1:5000/
 
