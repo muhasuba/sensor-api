@@ -18,7 +18,7 @@ def save_new_sensor(data: Dict[str, str]) -> Tuple[Dict[str, str], int]:
     else:
         response_object = {
             'status': 'fail',
-            'message': 'Sensor already exists. Please Log in.',
+            'message': 'Sensor already exists.',
         }
         return response_object, 409
 

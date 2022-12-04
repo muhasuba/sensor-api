@@ -18,7 +18,7 @@ def save_new_measurement_type(data: Dict[str, str]) -> Tuple[Dict[str, str], int
     else:
         response_object = {
             'status': 'fail',
-            'message': 'Measurement type already exists. Please Log in.',
+            'message': 'Measurement type already exists.',
         }
         return response_object, 409
 

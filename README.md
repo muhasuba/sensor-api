@@ -1,5 +1,7 @@
 ## SENSOR API
 
+REST API which is capable of storing raw measurements from sensors as well as retrieve data aggregates from these sensors upon request
+
 
 ### Development Environment Setup
 
