@@ -21,7 +21,7 @@ def get_all_measurement_types(self):
 
 class TestMeasurementType(BaseTestCase):
     def test_get_all_measurement_types_initial(self):
-        """ Test get all measurement types initial"""
+        """ Test get all measurement types initial """
         with self.client:
             response = get_all_measurement_types(self)
             data = json.loads(response.data.decode())
@@ -51,7 +51,7 @@ class TestMeasurementType(BaseTestCase):
             self.assertEqual(response.status_code, 409)
 
     def test_get_all_measurement_types_after_register(self):
-        """ Test get all measurement types after register"""
+        """ Test get all measurement types after register """
         register_measurement_type(self)
         with self.client:
             response = get_all_measurement_types(self)

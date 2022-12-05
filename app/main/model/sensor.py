@@ -12,4 +12,4 @@ class Sensor(db.Model):
     last_update = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
-        return "<Sensor '{}'>".format(self.title)
+        return f"<Sensor id {self.id} title {self.title}>"

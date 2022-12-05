@@ -1,24 +1,27 @@
 import unittest
 
 import json
+from dateutil import parser
 from app.test.base import BaseTestCase
 
 
 def store_measurement(self):
+    timestamp_utc = parser.parse('2022-12-05T11:54:52.301Z')
     return self.client.post(
         '/measurement/',
         data=json.dumps(dict(
             sensor_id=1,
             measurement_type_id=1,
-            value=0.123
+            value=0.123,
+            timestamp_utc='2022-12-05T11:54:52.301Z'
         )),
         content_type='application/json'
     )
 
 
-class TestMeaasurement(BaseTestCase):
+class TestMeasurement(BaseTestCase):
     def test_get_all_measurements_initial(self):
-        """ Test get all measurements initial"""
+        """ Test get all measurements initial """
         with self.client:
             response = self.client.get('/measurement/')
             data = json.loads(response.data.decode())
@@ -41,6 +44,7 @@ class TestMeaasurement(BaseTestCase):
         with self.client:
             response = self.client.get('/measurement/')
             data = json.loads(response.data.decode())
+            # self.assertEqual(data, 'xxx')
             self.assertEqual(len(data['data']), 1)
             self.assertEqual(data['data'][0]['sensor_id'], 1)
             self.assertEqual(data['data'][0]['measurement_type_id'], 1)

@@ -12,4 +12,4 @@ class MeasurementType(db.Model):
     last_update = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
-        return "<Measurement type '{}'>".format(self.title)
+        return f"<MeasurementType id {self.id} title {self.title}>"
