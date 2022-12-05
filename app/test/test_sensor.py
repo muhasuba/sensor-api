@@ -21,7 +21,7 @@ def get_all_sensors(self):
 
 class TestSensor(BaseTestCase):
     def test_get_all_sensors_initial(self):
-        """ Test get all sensors initial"""
+        """ Test get all sensors initial """
         with self.client:
             response = get_all_sensors(self)
             data = json.loads(response.data.decode())
@@ -51,7 +51,7 @@ class TestSensor(BaseTestCase):
             self.assertEqual(response.status_code, 409)
 
     def test_get_all_sensors_after_register(self):
-        """ Test get all sensors after register"""
+        """ Test get all sensors after register """
         register_sensor(self)
         with self.client:
             response = get_all_sensors(self)
