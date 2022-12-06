@@ -11,6 +11,12 @@ install:
 	. venv/bin/activate; \
 	pip install -r requirements.txt;
 
+dbinit:
+	. venv/bin/activate; \
+	python manage.py db init;  \
+	python manage.py db migrate --message 'initial database migration';  \
+	python manage.py db upgrade;
+
 linting:
 	pylint -E app/
 
@@ -22,4 +28,6 @@ run:
 	. venv/bin/activate; \
 	python manage.py run
 
-all: clean install linting tests run
+allfirst: clean install linting dbinit tests run
+
+all: clean install tests run
