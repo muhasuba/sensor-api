@@ -19,7 +19,7 @@ Run this export script for setup environment (for development and using docker-c
 export DATABASE_URL=postgresql://postgres:postgres@localhost:5432/sensor_api
 ```
 
-### Terminal commands
+### Terminal Commands
 Note: make sure you have `python3.8` (python3.8 specifically put in the Makefile to guarantee the compatibility of all versions of the libraries  ) `pip` and `virtualenv` installed.
 
 Initial installation
@@ -28,7 +28,7 @@ Initial installation
 make install
 ```
 
-Initial database setup (make sure folder migrations has not been created)
+Initial database setup (make sure folder migrations has not been created, developmen environment: docker and export environments, has been setup)
 
 ```bash
 make dbinit
@@ -49,12 +49,12 @@ make run
 
 ### Using the API
 
-#### API Swagger documentation
+#### API Swagger Documentation
 Open the following url on your browser to view swagger documentation
 http://127.0.0.1:5000/
 
 
-#### Sample request store measurement
+#### Sample Request Store Measurement
 
 ```bash
 curl -X 'POST' \
@@ -69,7 +69,7 @@ curl -X 'POST' \
 }'
 ```
 
-#### Sample request retrieve a measurement aggregate
+#### Sample Request Retrieve a Measurement Aggregate
 
 ```bash
 curl -X 'GET' \
@@ -78,7 +78,7 @@ curl -X 'GET' \
 ```
 
 
-### Additional info
+### Additional Info
 
 #### Database setup and migration
 Initial setup database (include in db init)
@@ -91,7 +91,7 @@ Migrate and upgrade
 > python manage.py db upgrade
 
 
-#### Pylint error check
+#### Pylint Error Check
 Run pylint error check during development can help to track errors (make sure pylint has been installed)
 
 ```bash

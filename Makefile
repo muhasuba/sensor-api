@@ -12,9 +12,10 @@ install:
 	pip install -r requirements.txt;
 
 dbinit:
-	python manage.py db init
-	python manage.py db migrate --message 'initial database migration'
-	python manage.py db upgrade
+	. venv/bin/activate; \
+	python manage.py db init;  \
+	python manage.py db migrate --message 'initial database migration';  \
+	python manage.py db upgrade;
 
 linting:
 	pylint -E app/
