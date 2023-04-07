@@ -100,7 +100,7 @@ pylint -E app/
 
 
 ### References
-This assignment fork/using sample from https://github.com/cosmic-byte/flask-restplus-boilerplate
+This sample fork/using sample from https://github.com/cosmic-byte/flask-restplus-boilerplate
 Guide https://medium.freecodecamp.org/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563
 
 
